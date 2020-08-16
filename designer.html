@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="main.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@531&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+
+    <div class="slideshow-container ">
+
+        <div class="mySlides" style="background:#22CC08;">
+            <div class="numbertext" style="color:white;">1 / 9</div>
+            <div class="text-smol fade" style="color:white;">Type designers currently sell their typefaces either
+                independently or through a larger font distributor for a 50-65% royalty rate.</div>
+        </div>
+
+        <div class="mySlides" style="background:#22CC08;">
+            <div class="numbertext" style="color:white;">2 / 9</div>
+            <div class="question-container">
+                <div class="question fade" style="color:white;">Which royalty rate best describes your sales of
+                    typeface?</div>
+
+                <div class="options fade">
+                    <label class="container">over 90%
+                        <input type="checkbox" checked="checked">
+                        <span class="checkmark"></span>
+                    </label>
+
+                    <label class="container">80-90%
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                    </label>
+
+                    <label class="container">60-70%
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                    </label>
+
+                    <label class="container">50-60%
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="container">less that 50%
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="mySlides" style="background:#22CC08;">
+            <div class="numbertext" style="color:white;">3 / 9</div>
+            <div class="text-smol fade" style="color:white;">We understand type design as a full time job for many
+                designers can seem like an unfeasible pursuit do to low royalty rates, low exposure for new
+                designers.
+            </div>
+        </div>
+
+        <div class="mySlides" style="background:#22CC08;">
+            <div class="numbertext" style="color:white;">4 / 9</div>
+            <div class="question-container">
+                <div class="question fade" style="color:white;">Rank your concerns for the field of type design from
+                    highest
+                    concern to lowest</div>
+
+                <div class="options fade">
+                    <label class="container">Royalty Rates
+                        <input type="checkbox" checked="checked">
+                        <span class="checkmark"></span>
+                    </label>
+
+                    <label class="container">Control over intellectual property
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                    </label>
+
+                    <label class="container">Too much competition
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                    </label>
+
+                    <label class="container">Pricing fonts
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="mySlides" style="background:#22CC08;">
+            <div class="numbertext" style="color:white;">5 / 9</div>
+            <div class="text-smol fade" style="color:white;">With a cloud based infrastructure it provides
+                greater
+                ability to control the legal distribution and use of typefaces. Our goal is to diminish the
+                pressure of
+                maintaining EULA’s so that you can get back to what’s important.</div>
+        </div>
+
+
+        <div class="mySlides" style="background:#22CC08;">
+            <div class="numbertext" style="color:white;">6 / 9</div>
+            <div class="question-container">
+                <div class="question fade" style="color:white;">Is maintaining intellectual property rights of
+                    your work
+                    important to you as a type designer?</div>
+
+                <div class="options fade">
+                    <label class="container">Very Important
+                        <input type="checkbox" checked="checked">
+                        <span class="checkmark"></span>
+                    </label>
+
+                    <label class="container">Yes but it dosent concern me
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                    </label>
+
+                    <label class="container">No, I really don’t care
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                    </label>
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="mySlides" style="background:#22CC08;">
+            <div class="numbertext" style="color:white;">7 / 9</div>
+            <div class="text-smol fade" style="color:white;">In many cases designers will rely on a core network
+                for
+                retaining client based work. Currently that seems to operate through word of mouth/referrals and
+                various
+                social media platforms.</div>
+        </div>
+
+        <div class="mySlides" style="background:#22CC08;">
+            <div class="numbertext" style="color:white;">8 / 9</div>
+            <div class="question-container">
+                <div class="question fade" style="color:white;">How important is retaining client based work?
+                </div>
+
+                <div class="options fade">
+                    <label class="container">Very important.
+                        <input type="checkbox" checked="checked">
+                        <span class="checkmark"></span>
+                    </label>
+
+                    <label class="container">Its not my main source of revenue.
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                    </label>
+
+                    <label class="container">Not worth my time or money.
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="mySlides" style="background:#22CC08;">
+            <div class="numbertext" style="color:white;">9 / 9</div>
+            <div class="text-smol fade" style="color:white;">Submit</div>
+        </div>
+
+        <a class="prev" style="color:white;" onclick="plusSlides(-1), setTimeout(showSlides, 13000);">previous</a>
+        <a class="next" style="color:white;" onclick="plusSlides(1), setTimeout(showSlides, 13000);">next</a>
+
+    </div>
+    <br>
+
+
+    <script>
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+
+        $('input[type="checkbox"]').on('change', function () {
+            $('input[type="checkbox"]').not(this).prop('checked', false);
+        });
+
+    </script>
+
+</body>
+
+</html>
