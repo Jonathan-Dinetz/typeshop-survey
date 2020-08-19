@@ -6,12 +6,14 @@
     <link rel="stylesheet" href="main.css" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@531&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-
+    <script src="https://wzrd.in/standalone/formdata-polyfill"></script>
+    <script src="https://wzrd.in/standalone/promise-polyfill@latest"></script>
+    <script src="https://wzrd.in/standalone/whatwg-fetch@latest"></script>
 </head>
 
 <body>
 
-    <div class="slideshow-container ">
+    <form name="user-form" class="slideshow-container ">
 
         <div class="mySlides" style="background:#22CC08;">
             <div class="numbertext" style="color:white;">1 / 13</div>
@@ -26,22 +28,22 @@
 
                 <div class="options fade">
                     <label class="container">Professional
-                        <input type="checkbox" checked="checked">
+                        <input type="radio" name="designer-level" checked>
                         <span class="checkmark"></span>
                     </label>
 
                     <label class="container">Student
-                        <input type="checkbox">
+                        <input type="radio" name="designer-level">
                         <span class="checkmark"></span>
                     </label>
 
                     <label class="container">I work with fonts but I’m not a designer
-                        <input type="checkbox">
+                        <input type="radio" name="designer-level">
                         <span class="checkmark"></span>
                     </label>
 
                     <label class="container">I just like fonts
-                        <input type="checkbox">
+                        <input type="radio" name="designer-level">
                         <span class="checkmark"></span>
                     </label>
                 </div>
@@ -63,17 +65,17 @@
 
                 <div class="options fade">
                     <label class="container">Yes, that would be helpful
-                        <input type="checkbox" checked="checked">
+                        <input type="radio" name="purchase-before-return" checked>
                         <span class="checkmark"></span>
                     </label>
 
                     <label class="container">Sounds nice, but I don't think I would
-                        <input type="checkbox">
+                        <input type="radio" name="purchase-before-return">
                         <span class="checkmark"></span>
                     </label>
 
                     <label class="container">No not really
-                        <input type="checkbox">
+                        <input type="radio" name="purchase-before-return">
                         <span class="checkmark"></span>
                     </label>
 
@@ -99,12 +101,12 @@
 
                 <div class="options fade">
                     <label class="container">I like to have the control of a ttf.
-                        <input type="checkbox" checked="checked">
+                        <input type="radio" name="physical-or-cloud" checked>
                         <span class="checkmark"></span>
                     </label>
 
                     <label class="container">I like the convenience of cloud fonts.
-                        <input type="checkbox">
+                        <input type="radio" name="physical-or-cloud">
                         <span class="checkmark"></span>
                     </label>
 
@@ -129,17 +131,17 @@
 
                 <div class="options fade">
                     <label class="container">Yes, its very usful
-                        <input type="checkbox" checked="checked">
+                        <input type="radio" name="font-manager" checked>
                         <span class="checkmark"></span>
                     </label>
 
                     <label class="container">Yes, but it’s not necisary for my work
-                        <input type="checkbox">
+                        <input type="radio" name="font-manager">
                         <span class="checkmark"></span>
                     </label>
 
                     <label class="container">No
-                        <input type="checkbox">
+                        <input type="radio" name="font-manager">
                         <span class="checkmark"></span>
                     </label>
 
@@ -161,17 +163,17 @@
 
                 <div class="options fade">
                     <label class="container">Yes, it is important.
-                        <input type="checkbox" checked="checked">
+                        <input type="radio" name="reasonable-price" checked>
                         <span class="checkmark"></span>
                     </label>
 
                     <label class="container">Yes but it dosen't concern me.
-                        <input type="checkbox">
+                        <input type="radio" name="reasonable-price">
                         <span class="checkmark"></span>
                     </label>
 
                     <label class="container">No, I really don’t care.
-                        <input type="checkbox">
+                        <input type="radio" name="reasonable-price">
                         <span class="checkmark"></span>
                     </label>
 
@@ -196,22 +198,22 @@
 
                 <div class="options fade">
                     <label class="container">Yes
-                        <input type="checkbox" checked="checked">
+                        <input type="radio" name="free-font-quality" checked>
                         <span class="checkmark"></span>
                     </label>
 
                     <label class="container">There are a few good ones but mostly crap.
-                        <input type="checkbox">
+                        <input type="radio" name="free-font-quality">
                         <span class="checkmark"></span>
                     </label>
 
                     <label class="container">No, most free fonts are well crafted and high quality.
-                        <input type="checkbox">
+                        <input type="radio" name="free-font-quality">
                         <span class="checkmark"></span>
                     </label>
 
                     <label class="container">Free fonts are higher quality than paid fonts.
-                        <input type="checkbox">
+                        <input type="radio" name="free-font-quality">
                         <span class="checkmark"></span>
                     </label>
 
@@ -221,7 +223,7 @@
 
         <div class="mySlides" style="background:#22CC08;">
             <div class="numbertext" style="color:white;">13 / 13</div>
-            <div class="text-smol fade" style="color:white;">Submit.
+            <div onclick="submitUserForm" class="text-smol fade" style="color:white;">Submit.
             </div>
         </div>
 
@@ -232,7 +234,7 @@
         <a class="prev" style="color:white;" onclick="plusSlides(-1), setTimeout(showSlides, 13000);">previous</a>
         <a class="next" style="color:white;" onclick="plusSlides(1), setTimeout(showSlides, 13000);">next</a>
 
-    </div>
+    </form>
     <br>
 
 
@@ -265,9 +267,14 @@
             dots[slideIndex - 1].className += " active";
         }
 
-        $('input[type="checkbox"]').on('change', function () {
-            $('input[type="checkbox"]').not(this).prop('checked', false);
-        });
+        function submitUserForm(e) {
+            e.preventDefault();
+            document.forms['user-form'].submit();
+        }
+
+        // $('input[type="checkbox"]').on('change', function () {
+        //     $('input[type="checkbox"]').not(this).prop('checked', false);
+        // });
 
     </script>
 

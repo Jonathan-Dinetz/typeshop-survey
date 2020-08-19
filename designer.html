@@ -6,12 +6,14 @@
     <link rel="stylesheet" href="main.css" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@531&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-
+    <script src="https://wzrd.in/standalone/formdata-polyfill"></script>
+    <script src="https://wzrd.in/standalone/promise-polyfill@latest"></script>
+    <script src="https://wzrd.in/standalone/whatwg-fetch@latest"></script>
 </head>
 
 <body>
 
-    <div class="slideshow-container ">
+    <form name="designer-form" class="slideshow-container ">
 
         <div class="mySlides" style="background:#22CC08;">
             <div class="numbertext" style="color:white;">1 / 9</div>
@@ -27,26 +29,26 @@
 
                 <div class="options fade">
                     <label class="container">over 90%
-                        <input type="checkbox" checked="checked">
+                        <input type="radio" name="royalty-rate" checked>
                         <span class="checkmark"></span>
                     </label>
 
                     <label class="container">80-90%
-                        <input type="checkbox">
+                        <input type="radio" name="royalty-rate">
                         <span class="checkmark"></span>
                     </label>
 
                     <label class="container">60-70%
-                        <input type="checkbox">
+                        <input type="radio" name="royalty-rate">
                         <span class="checkmark"></span>
                     </label>
 
                     <label class="container">50-60%
-                        <input type="checkbox">
+                        <input type="radio" name="royalty-rate">
                         <span class="checkmark"></span>
                     </label>
                     <label class="container">less that 50%
-                        <input type="checkbox">
+                        <input type="radio" name="royalty-rate">
                         <span class="checkmark"></span>
                     </label>
                 </div>
@@ -111,17 +113,17 @@
 
                 <div class="options fade">
                     <label class="container">Very Important
-                        <input type="checkbox" checked="checked">
+                        <input type="radio" name="IP" checked>
                         <span class="checkmark"></span>
                     </label>
 
                     <label class="container">Yes but it dosent concern me
-                        <input type="checkbox">
+                        <input type="radio" name="IP">
                         <span class="checkmark"></span>
                     </label>
 
                     <label class="container">No, I really don’t care
-                        <input type="checkbox">
+                        <input type="radio" name="IP">
                         <span class="checkmark"></span>
                     </label>
 
@@ -147,17 +149,17 @@
 
                 <div class="options fade">
                     <label class="container">Very important.
-                        <input type="checkbox" checked="checked">
+                        <input type="radio" name="client-based" checked>
                         <span class="checkmark"></span>
                     </label>
 
                     <label class="container">Its not my main source of revenue.
-                        <input type="checkbox">
+                        <input type="radio" name="client-based">
                         <span class="checkmark"></span>
                     </label>
 
                     <label class="container">Not worth my time or money.
-                        <input type="checkbox">
+                        <input type="radio" name="client-based">
                         <span class="checkmark"></span>
                     </label>
                 </div>
@@ -166,13 +168,13 @@
 
         <div class="mySlides" style="background:#22CC08;">
             <div class="numbertext" style="color:white;">9 / 9</div>
-            <div class="text-smol fade" style="color:white;">Submit</div>
+            <div onclick="submitDesignerForm" class="text-smol fade" style="color:white;">Submit</div>
         </div>
 
         <a class="prev" style="color:white;" onclick="plusSlides(-1), setTimeout(showSlides, 13000);">previous</a>
         <a class="next" style="color:white;" onclick="plusSlides(1), setTimeout(showSlides, 13000);">next</a>
 
-    </div>
+    </form>
     <br>
 
 
@@ -205,10 +207,23 @@
             dots[slideIndex - 1].className += " active";
         }
 
-        $('input[type="checkbox"]').on('change', function () {
-            $('input[type="checkbox"]').not(this).prop('checked', false);
-        });
+        // $('input[type="checkbox"]').on('change', function () {
+        //     $('input[type="checkbox"]').not(this).prop('checked', false);
+        // });
+        function submitDesignerForm(e) {
+            e.preventDefault();
+            document.forms['designer-form'].submit();
+        }
 
+        var scriptURL = 'https://script.google.com/macros/s/AKfycbyaOuC0znHlNfKJQhqf_FlKhJg6Y4lYmoIKP41gsq7eteL_VQ/exec';
+        const form = document.forms['designer-form'];
+
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => console.log('Success!', response))
+            .catch(error => console.error('Error!', error.message))
+        })
     </script>
 
 </body>
