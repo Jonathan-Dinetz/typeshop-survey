@@ -28,22 +28,22 @@
 
                 <div class="options fade">
                     <label class="container">Professional
-                        <input type="radio" name="designer-level" checked>
+                        <input type="radio" name="designer-level" value="professional" checked>
                         <span class="checkmark"></span>
                     </label>
 
                     <label class="container">Student
-                        <input type="radio" name="designer-level">
+                        <input type="radio" name="designer-level" value="student">
                         <span class="checkmark"></span>
                     </label>
 
                     <label class="container">I work with fonts but I’m not a designer
-                        <input type="radio" name="designer-level">
+                        <input type="radio" name="designer-level" value="work with fonts but not a designer">
                         <span class="checkmark"></span>
                     </label>
 
                     <label class="container">I just like fonts
-                        <input type="radio" name="designer-level">
+                        <input type="radio" name="designer-level" value="i just like fonts">
                         <span class="checkmark"></span>
                     </label>
                 </div>
@@ -65,17 +65,17 @@
 
                 <div class="options fade">
                     <label class="container">Yes, that would be helpful
-                        <input type="radio" name="purchase-before-return" checked>
+                        <input type="radio" name="purchase-before-return" value="yes would be helpful" checked>
                         <span class="checkmark"></span>
                     </label>
 
                     <label class="container">Sounds nice, but I don't think I would
-                        <input type="radio" name="purchase-before-return">
+                        <input type="radio" name="purchase-before-return" value="sounds nice, but don't think so">
                         <span class="checkmark"></span>
                     </label>
 
                     <label class="container">No not really
-                        <input type="radio" name="purchase-before-return">
+                        <input type="radio" name="purchase-before-return" value="no not really">
                         <span class="checkmark"></span>
                     </label>
 
@@ -101,12 +101,12 @@
 
                 <div class="options fade">
                     <label class="container">I like to have the control of a ttf.
-                        <input type="radio" name="physical-or-cloud" checked>
+                        <input type="radio" name="physical-or-cloud" checked value="i like to have control of ttf">
                         <span class="checkmark"></span>
                     </label>
 
                     <label class="container">I like the convenience of cloud fonts.
-                        <input type="radio" name="physical-or-cloud">
+                        <input type="radio" name="physical-or-cloud" value="i like convenience of cloud fonts">
                         <span class="checkmark"></span>
                     </label>
 
@@ -130,18 +130,18 @@
                 </div>
 
                 <div class="options fade">
-                    <label class="container">Yes, its very usful
-                        <input type="radio" name="font-manager" checked>
+                    <label class="container">Yes, its very useful
+                        <input type="radio" name="font-manager" checked value="yes useful">
                         <span class="checkmark"></span>
                     </label>
 
-                    <label class="container">Yes, but it’s not necisary for my work
-                        <input type="radio" name="font-manager">
+                    <label class="container">Yes, but it’s not necessary for my work
+                        <input type="radio" name="font-manager" value="yes but not necessary" >
                         <span class="checkmark"></span>
                     </label>
 
                     <label class="container">No
-                        <input type="radio" name="font-manager">
+                        <input type="radio" name="font-manager" value="no">
                         <span class="checkmark"></span>
                     </label>
 
@@ -163,17 +163,17 @@
 
                 <div class="options fade">
                     <label class="container">Yes, it is important.
-                        <input type="radio" name="reasonable-price" checked>
+                        <input type="radio" name="reasonable-price" checked value="yes, it's important">
                         <span class="checkmark"></span>
                     </label>
 
                     <label class="container">Yes but it dosen't concern me.
-                        <input type="radio" name="reasonable-price">
+                        <input type="radio" name="reasonable-price" value="yes but doesn't concern me">
                         <span class="checkmark"></span>
                     </label>
 
                     <label class="container">No, I really don’t care.
-                        <input type="radio" name="reasonable-price">
+                        <input type="radio" name="reasonable-price" value="no i don't care">
                         <span class="checkmark"></span>
                     </label>
 
@@ -198,22 +198,22 @@
 
                 <div class="options fade">
                     <label class="container">Yes
-                        <input type="radio" name="free-font-quality" checked>
+                        <input type="radio" name="free-font-quality" checked value="yes">
                         <span class="checkmark"></span>
                     </label>
 
                     <label class="container">There are a few good ones but mostly crap.
-                        <input type="radio" name="free-font-quality">
+                        <input type="radio" name="free-font-quality" value="there are a few good ones, but mostly crap">
                         <span class="checkmark"></span>
                     </label>
 
                     <label class="container">No, most free fonts are well crafted and high quality.
-                        <input type="radio" name="free-font-quality">
+                        <input type="radio" name="free-font-quality" value="no, most free fonts are high quality">
                         <span class="checkmark"></span>
                     </label>
 
                     <label class="container">Free fonts are higher quality than paid fonts.
-                        <input type="radio" name="free-font-quality">
+                        <input type="radio" name="free-font-quality" value="free fonts are higher quality than paid">
                         <span class="checkmark"></span>
                     </label>
 
@@ -223,8 +223,8 @@
 
         <div class="mySlides" style="background:#22CC08;">
             <div class="numbertext" style="color:white;">13 / 13</div>
-            <div onclick="submitUserForm" class="text-smol fade" style="color:white;">Submit.
-            </div>
+            <button type="submit" class="text-smol fade" style="color:white;">Submit.
+            </button>
         </div>
 
 
@@ -264,14 +264,24 @@
                 dots[i].className = dots[i].className.replace(" active", "");
             }
             slides[slideIndex - 1].style.display = "block";
-            dots[slideIndex - 1].className += " active";
+            // dots[slideIndex - 1].className += " active";
         }
 
-        function submitUserForm(e) {
+        // var submitUserForm = function(e) {
+        //     console.log(e);
+        //     e.preventDefault();
+        //     document.forms['user-form'].submit();
+        // }
+
+        var scriptURL = 'https://script.google.com/a/stanford.edu/macros/s/AKfycbxA5d6YiLdDmhU8GVXpxh7iNT3BKm-yv6wbHZTAQRGNrmXo7XY/exec';
+        const form = document.forms['user-form'];
+
+        form.addEventListener('submit', e => {
             e.preventDefault();
-            document.forms['user-form'].submit();
-        }
-
+            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => console.log('Success!', response))
+            .catch(error => console.error('Error!', error.message))
+        })
         // $('input[type="checkbox"]').on('change', function () {
         //     $('input[type="checkbox"]').not(this).prop('checked', false);
         // });

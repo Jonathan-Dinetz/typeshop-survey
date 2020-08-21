@@ -214,12 +214,12 @@
             e.preventDefault();
             document.forms['designer-form'].submit();
         }
-
-        var scriptURL = 'https://script.google.com/macros/s/AKfycbyaOuC0znHlNfKJQhqf_FlKhJg6Y4lYmoIKP41gsq7eteL_VQ/exec';
+        
+        var scriptURL = 'https://script.google.com/a/stanford.edu/macros/s/AKfycbyaOuC0znHlNfKJQhqf_FlKhJg6Y4lYmoIKP41gsq7eteL_VQ/exec';
         const form = document.forms['designer-form'];
 
         form.addEventListener('submit', e => {
-            e.preventDefault()
+            e.preventDefault();
             fetch(scriptURL, { method: 'POST', body: new FormData(form)})
             .then(response => console.log('Success!', response))
             .catch(error => console.error('Error!', error.message))
