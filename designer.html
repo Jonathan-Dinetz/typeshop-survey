@@ -86,7 +86,7 @@
                         <span class="checkmark"></span>
                     </label>
 
-                    <label class="container">Pricing fonts
+                    <label class="container">Setting font prices
                         <input type="checkbox">
                         <span class="checkmark"></span>
                     </label>
@@ -96,33 +96,30 @@
 
         <div class="mySlides" style="background:#22CC08;">
             <div class="numbertext" style="color:white;">5 / 9</div>
-            <div class="text-smol fade" style="color:white;">With a cloud based infrastructure it provides
-                greater
-                ability to control the legal distribution and use of typefaces. Our goal is to diminish the
-                pressure of
-                maintaining EULA’s so that you can get back to what’s important.</div>
+            <div class="text-smol fade" style="color:white;">In many cases designers will rely on a core network for
+                retaining client based work. Currently that seems to operate through word of mouth/referrals and
+                exposure on various social media platforms.</div>
         </div>
 
 
         <div class="mySlides" style="background:#22CC08;">
             <div class="numbertext" style="color:white;">6 / 9</div>
             <div class="question-container">
-                <div class="question fade" style="color:white;">Is maintaining intellectual property rights of
-                    your work
-                    important to you as a type designer?</div>
+                <div class="question fade" style="color:white;">How important is retaining client based work?
+                </div>
 
                 <div class="options fade">
-                    <label class="container">Very Important
+                    <label class="container">Very important
                         <input type="radio" name="IP" checked>
                         <span class="checkmark"></span>
                     </label>
 
-                    <label class="container">Yes but it dosent concern me
+                    <label class="container"> it’s not my main source of revenue
                         <input type="radio" name="IP">
                         <span class="checkmark"></span>
                     </label>
 
-                    <label class="container">No, I really don’t care
+                    <label class="container">Not worth my time or money
                         <input type="radio" name="IP">
                         <span class="checkmark"></span>
                     </label>
@@ -134,31 +131,31 @@
 
         <div class="mySlides" style="background:#22CC08;">
             <div class="numbertext" style="color:white;">7 / 9</div>
-            <div class="text-smol fade" style="color:white;">In many cases designers will rely on a core network
-                for
-                retaining client based work. Currently that seems to operate through word of mouth/referrals and
-                various
-                social media platforms.</div>
+            <div class="text-smol fade" style="color:white;">A cloud based infrastructure provides greater
+                ability to control the legal distribution and use of typefaces. Our goal is to diminish the pressure of
+                maintaining EULA’s so that you can get back to what’s important</div>
         </div>
 
         <div class="mySlides" style="background:#22CC08;">
             <div class="numbertext" style="color:white;">8 / 9</div>
             <div class="question-container">
-                <div class="question fade" style="color:white;">How important is retaining client based work?
+                <div class="question fade" style="color:white;">Is maintaining the intellectual property rights of your
+                    work important to you as a type designer?
                 </div>
 
                 <div class="options fade">
-                    <label class="container">Very important.
+                    <label class="container">Yes it is very important
                         <input type="radio" name="client-based" checked>
                         <span class="checkmark"></span>
                     </label>
 
-                    <label class="container">Its not my main source of revenue.
+                    <label class="container">Yes, but it doesn't concern me
+
                         <input type="radio" name="client-based">
                         <span class="checkmark"></span>
                     </label>
 
-                    <label class="container">Not worth my time or money.
+                    <label class="container">No, I really don’t care
                         <input type="radio" name="client-based">
                         <span class="checkmark"></span>
                     </label>
@@ -214,15 +211,15 @@
             e.preventDefault();
             document.forms['designer-form'].submit();
         }
-        
+
         var scriptURL = 'https://script.google.com/a/stanford.edu/macros/s/AKfycbyaOuC0znHlNfKJQhqf_FlKhJg6Y4lYmoIKP41gsq7eteL_VQ/exec';
         const form = document.forms['designer-form'];
 
         form.addEventListener('submit', e => {
             e.preventDefault();
-            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-            .then(response => console.log('Success!', response))
-            .catch(error => console.error('Error!', error.message))
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => console.log('Success!', response))
+                .catch(error => console.error('Error!', error.message))
         })
     </script>
 

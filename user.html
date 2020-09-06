@@ -86,9 +86,8 @@
 
         <div class="mySlides" style="background:#22CC08;">
             <div class="numbertext" style="color:white;">5 / 13</div>
-            <div class="text-smol fade" style="color:white;">Typeshop will feature an entirely cloud based system of
-                font distribution. That means installing type, un-installing, and distributing among members of a
-                creative team will require no more than a couple clicks. </div>
+            <div class="text-smol fade" style="color:white;">Both cloud storage and download based systems have their
+                advantages, access to fonts across multiple devices, control over physical files. </div>
         </div>
 
 
@@ -110,7 +109,7 @@
                         <span class="checkmark"></span>
                     </label>
 
-                    </label>
+
                 </div>
             </div>
         </div>
@@ -130,20 +129,17 @@
                 </div>
 
                 <div class="options fade">
-                    <label class="container">Yes, its very useful
+                    <label class="container">Yes
                         <input type="radio" name="font-manager" checked value="yes useful">
                         <span class="checkmark"></span>
                     </label>
 
-                    <label class="container">Yes, but it’s not necessary for my work
-                        <input type="radio" name="font-manager" value="yes but not necessary" >
+                    <label class="container">No
+                        <input type="radio" name="font-manager" value="yes but not necessary">
                         <span class="checkmark"></span>
                     </label>
 
-                    <label class="container">No
-                        <input type="radio" name="font-manager" value="no">
-                        <span class="checkmark"></span>
-                    </label>
+
 
                 </div>
             </div>
@@ -162,18 +158,13 @@
                 </div>
 
                 <div class="options fade">
-                    <label class="container">Yes, it is important.
-                        <input type="radio" name="reasonable-price" checked value="yes, it's important">
+                    <label class="container">Yes
+                        <input type="radio" name="font-manager" checked value="yes useful">
                         <span class="checkmark"></span>
                     </label>
 
-                    <label class="container">Yes but it dosen't concern me.
-                        <input type="radio" name="reasonable-price" value="yes but doesn't concern me">
-                        <span class="checkmark"></span>
-                    </label>
-
-                    <label class="container">No, I really don’t care.
-                        <input type="radio" name="reasonable-price" value="no i don't care">
+                    <label class="container">No
+                        <input type="radio" name="font-manager" value="yes but not necessary">
                         <span class="checkmark"></span>
                     </label>
 
@@ -184,8 +175,8 @@
         <div class="mySlides" style="background:#22CC08;">
             <div class="numbertext" style="color:white;">11 / 13</div>
             <div class=" text-smol fade" style="color:white;">Libraries such as google, dafont and font squirrel offer
-                a
-                extensive selection of typefaces free of charge opposed to retailers such as monotype that charge up to
+                a extensive selection of typefaces free of charge opposed to retailers such as monotype that charge up
+                to
                 $200 for a font family.
             </div>
         </div>
@@ -278,9 +269,9 @@
 
         form.addEventListener('submit', e => {
             e.preventDefault();
-            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-            .then(response => console.log('Success!', response))
-            .catch(error => console.error('Error!', error.message))
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => console.log('Success!', response))
+                .catch(error => console.error('Error!', error.message))
         })
         // $('input[type="checkbox"]').on('change', function () {
         //     $('input[type="checkbox"]').not(this).prop('checked', false);

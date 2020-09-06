@@ -109,15 +109,33 @@ img {
 }
 
 .text-smol {
-    display: inline;
+    display: flex;
     color: black;
     font-size: 4.5vw;
     position: absolute;
+    background:none;
+    border:none;
     top: 6vw;
     left: 5vw;
     width: 90%;
-    height: 30%;
+    height: 10%;
     font-family: YoungSerif, serif;
+    cursor: crosshair;
+}
+
+.text-smol:focus {
+    border: none;
+}
+
+.text-smol:active {
+    border: none;
+}
+
+button:focus {
+    border: none;
+}
+button:active {
+    border: none;
 }
 
 /* Number text (1/3 etc) */
@@ -189,7 +207,7 @@ img {
   
   /* On mouse-over, add a grey background color */
   .container:hover input ~ .checkmark {
-    background-color: grey;
+    background-color: white;
   }
   
   /* When the checkbox is checked, add a blue background */
@@ -354,7 +372,7 @@ img {
     }
 
     .question {
-        font-size: 4.25vh;
+        font-size: 3.5vh;
         width: 84vw;
     }
 
@@ -375,7 +393,7 @@ img {
 
     .container {
         display: flex;
-        font-size: 4.25vh;
+        font-size: 3.5vh;
         align-items: center;
         align-content: center;
        
