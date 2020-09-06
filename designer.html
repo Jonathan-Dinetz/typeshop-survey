@@ -29,26 +29,26 @@
 
                 <div class="options fade">
                     <label class="container">over 90%
-                        <input type="radio" name="royalty-rate" checked>
+                        <input type="radio" name="royalty-rate" value="over 90%" checked>
                         <span class="checkmark"></span>
                     </label>
 
                     <label class="container">80-90%
-                        <input type="radio" name="royalty-rate">
+                        <input type="radio" name="royalty-rate" value="80-90%">
                         <span class="checkmark"></span>
                     </label>
 
                     <label class="container">60-70%
-                        <input type="radio" name="royalty-rate">
+                        <input type="radio" name="royalty-rate" value="60-70%">
                         <span class="checkmark"></span>
                     </label>
 
                     <label class="container">50-60%
-                        <input type="radio" name="royalty-rate">
+                        <input type="radio" name="royalty-rate" value="50-60%">
                         <span class="checkmark"></span>
                     </label>
                     <label class="container">less that 50%
-                        <input type="radio" name="royalty-rate">
+                        <input type="radio" name="royalty-rate" value="less than 50%">
                         <span class="checkmark"></span>
                     </label>
                 </div>
@@ -72,22 +72,22 @@
 
                 <div class="options fade">
                     <label class="container">Royalty Rates
-                        <input type="checkbox" checked="checked">
+                        <input type="checkbox" checked="checked" name="concerns">
                         <span class="checkmark"></span>
                     </label>
 
                     <label class="container">Control over intellectual property
-                        <input type="checkbox">
+                        <input type="checkbox" name="concerns">
                         <span class="checkmark"></span>
                     </label>
 
                     <label class="container">Too much competition
-                        <input type="checkbox">
+                        <input type="checkbox" name="concerns">
                         <span class="checkmark"></span>
                     </label>
 
                     <label class="container">Setting font prices
-                        <input type="checkbox">
+                        <input type="checkbox" name="concerns" >
                         <span class="checkmark"></span>
                     </label>
                 </div>
@@ -110,17 +110,17 @@
 
                 <div class="options fade">
                     <label class="container">Very important
-                        <input type="radio" name="IP" checked>
+                        <input type="radio" name="client-based" checked value="very important">
                         <span class="checkmark"></span>
                     </label>
 
                     <label class="container"> it’s not my main source of revenue
-                        <input type="radio" name="IP">
+                        <input type="radio" name="client-based" value="not my main source of revenue">
                         <span class="checkmark"></span>
                     </label>
 
                     <label class="container">Not worth my time or money
-                        <input type="radio" name="IP">
+                        <input type="radio" name="client-based" value="not worth my time or money">
                         <span class="checkmark"></span>
                     </label>
 
@@ -145,18 +145,18 @@
 
                 <div class="options fade">
                     <label class="container">Yes it is very important
-                        <input type="radio" name="client-based" checked>
+                        <input type="radio" name="IP" checked value="very important">
                         <span class="checkmark"></span>
                     </label>
 
                     <label class="container">Yes, but it doesn't concern me
 
-                        <input type="radio" name="client-based">
+                        <input type="radio" name="IP" value="yes but doesn't concern me">
                         <span class="checkmark"></span>
                     </label>
 
                     <label class="container">No, I really don’t care
-                        <input type="radio" name="client-based">
+                        <input type="radio" name="IP" value="no i don't really care">
                         <span class="checkmark"></span>
                     </label>
                 </div>
@@ -165,7 +165,7 @@
 
         <div class="mySlides" style="background:#22CC08;">
             <div class="numbertext" style="color:white;">9 / 9</div>
-            <div onclick="submitDesignerForm" class="text-smol fade" style="color:white;">Submit</div>
+            <button type="submit" class="text-smol fade" style="color:white;">Submit</button>
         </div>
 
         <a class="prev" style="color:white;" onclick="plusSlides(-1), setTimeout(showSlides, 13000);">previous</a>
@@ -201,16 +201,13 @@
                 dots[i].className = dots[i].className.replace(" active", "");
             }
             slides[slideIndex - 1].style.display = "block";
-            dots[slideIndex - 1].className += " active";
+            // dots[slideIndex - 1].className += " active";
         }
 
         // $('input[type="checkbox"]').on('change', function () {
         //     $('input[type="checkbox"]').not(this).prop('checked', false);
         // });
-        function submitDesignerForm(e) {
-            e.preventDefault();
-            document.forms['designer-form'].submit();
-        }
+
 
         var scriptURL = 'https://script.google.com/a/stanford.edu/macros/s/AKfycbyaOuC0znHlNfKJQhqf_FlKhJg6Y4lYmoIKP41gsq7eteL_VQ/exec';
         const form = document.forms['designer-form'];
