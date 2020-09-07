@@ -166,7 +166,6 @@ button{
 
 .options {
     display: flex;
- 
     margin-top: 4vh;
     width: 40vw;
     flex-direction: column;
@@ -317,6 +316,8 @@ button{
         width: 85%;
     }
 
+
+
     .text-smol {
         left: 7.25vw;
         font-size: 9vw;
@@ -326,12 +327,6 @@ button{
 
     .type {
         color: #22CC08;
-        transition: color 0.25s;
-        animation-iteration-count: infinite;
-        animation-fill-mode: both;
-        animation-duration: 1.5s;
-        animation-name: pulse;
-        animation-timing-function: ease-in-out;
     }
 
     .numbertext{
@@ -357,6 +352,7 @@ button{
        .hint {
         left: 8vw;
         top: 5vw;
+        font-size: 18px;
     }
 
     .prev:hover,
@@ -366,23 +362,8 @@ button{
     }
 
 
-    
-    @keyframes pulse {
-        0% {
-            opacity: 30%;
-        }
-    
-        50% {
-            opacity: 100%;
-        }
-        100% {
-            opacity: 30%;
-    
-        }
-    }
-
     .question {
-        font-size: 3.5vh;
+        font-size: 3vh;
         width: 84vw;
     }
 
@@ -396,14 +377,13 @@ button{
     }
     
     .options {
-        margin-top: 20vh;
+        margin-top: 10vh;
         width: 40vw;
-        
     }
 
     .container {
         display: flex;
-        font-size: 3.5vh;
+        font-size: 3vh;
         align-items: center;
         align-content: center;
        
@@ -414,6 +394,7 @@ button{
         display: flex;
         align-self: center;
         top: 1vh;
+        
         height: 2.25vh;
         width: 2.25vh;
         border-radius: 50%;
@@ -428,5 +409,10 @@ button{
 
       }
 
-    
+      .checkmark > input {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        -o-appearance: none;
+        appearance: none;
+      }
   }
