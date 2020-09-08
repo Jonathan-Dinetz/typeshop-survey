@@ -421,4 +421,8 @@ button{
         -o-appearance: none;
         appearance: none;
       }
+
+      .text-smol {
+        font-weight: 500;
+    }
   }
