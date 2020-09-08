@@ -326,9 +326,10 @@ button{
 
     .text-smol {
         left: 7.25vw;
-        font-size: 9vw;
+        font-size: 8vw;
         top: 15vw;
         width: 85%;
+        font-weight: 500;
     }
 
     .type {
@@ -345,7 +346,6 @@ button{
      right: 8vw;
      bottom: 8vw;
      font-size: 18px;
-
     }
 
     .prev {
@@ -392,15 +392,12 @@ button{
         font-size: 3vh;
         align-items: center;
         align-content: center;
-       
-        
     }
 
     .checkmark {
         display: flex;
         align-self: center;
         top: 1vh;
-        
         height: 2.25vh;
         width: 2.25vh;
         border-radius: 50%;
@@ -411,8 +408,6 @@ button{
          -moz-user-select: none;
          -ms-user-select: none;
          user-select: none;
-        
-
       }
 
       .checkmark > input {
@@ -422,7 +417,4 @@ button{
         appearance: none;
       }
 
-      .text-smol {
-        font-weight: 500;
-    }
   }
